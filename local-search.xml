@@ -4,11 +4,30 @@
   
   
   <entry>
+    <title>Linux</title>
+    <link href="/2021/05/26/Linux/"/>
+    <url>/2021/05/26/Linux/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="数据流重定向"><a href="#数据流重定向" class="headerlink" title="数据流重定向"></a>数据流重定向</h3><pre><code>重定向指的是使用文件代替标准输入输出和错误输出</code></pre><table><thead><tr><th>1</th><th>代码</th><th>运算符</th></tr></thead><tbody><tr><td>标准输入stdin</td><td>0</td><td>&lt;或者&lt;&lt;</td></tr><tr><td>标准输出stdout</td><td>1</td><td>&gt;或者&gt;&gt;</td></tr><tr><td>标准错误stderr</td><td>2</td><td>2&gt;或者2&gt;&gt;</td></tr></tbody></table><pre><code>如果要将标准输入以及错误输出同时重定向到一个文件需要将某个输出转换成另一个输出，例如2&gt;&amp;1 表示将标准错误输出转为标准输出find /home -name .bashrc &gt; list 2&gt;&amp;1</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Docker</title>
     <link href="/2021/05/25/Docker/"/>
     <url>/2021/05/25/Docker/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="About-Docker-Compose"><a href="#About-Docker-Compose" class="headerlink" title="About Docker Compose"></a>About Docker Compose</h2><pre><code>Compose 是运行多容器Docker应用程序的工具</code></pre><p>通过<a href="https://www.runoob.com/w3cnote/yaml-intro.html">Yaml</a>来配置所有需要运行的服务</p><p>Compose 三步骤：</p><blockquote><ol><li>dockerfile 定义应用程序的环境</li><li>docker-compose.yml 配置应用程序的服务</li><li>docker-compose up 启动应用程序</li></ol></blockquote>]]></content>
     
     
     
@@ -27,28 +46,15 @@
     <link href="/2021/05/23/Electron/"/>
     <url>/2021/05/23/Electron/</url>
     
-    <content type="html"><![CDATA[<h3 id="electron-question"><a href="#electron-question" class="headerlink" title="electron question"></a>electron question</h3><ol><li>electron need cd node_moudules use npm install </li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="Electron-question"><a href="#Electron-question" class="headerlink" title="Electron question"></a>Electron question</h2><blockquote><p>Electron need cd node_moudules use npm install </p></blockquote>]]></content>
     
     
     
     <tags>
       
-      <tag>electron</tag>
+      <tag>Electron</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>AboutHexo</title>
-    <link href="/2021/05/19/Abouthexo/"/>
-    <url>/2021/05/19/Abouthexo/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
     
   </entry>
   
