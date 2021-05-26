@@ -4,12 +4,43 @@
   
   
   <entry>
+    <title>ClickHouse</title>
+    <link href="/2021/05/27/ClickHouse/"/>
+    <url>/2021/05/27/ClickHouse/</url>
+    
+    <content type="html"><![CDATA[<h2 id="什么是ClickHouse？"><a href="#什么是ClickHouse？" class="headerlink" title="什么是ClickHouse？"></a>什么是ClickHouse？</h2><pre><code>ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)，列式数据库。</code></pre><h2 id="为什么要用ClickHouse"><a href="#为什么要用ClickHouse" class="headerlink" title="为什么要用ClickHouse"></a>为什么要用ClickHouse</h2><pre><code>列式数据库更适合于OLAP场景(对于大多数查询而言，处理速度至少提高了100倍)</code></pre><p>行式：<br><img src="https://clickhouse.tech/docs/zh/images/row-oriented.gif" alt="行数据库"><br>列式：<br><img src="https://clickhouse.tech/docs/zh/images/column-oriented.gif" alt="列数据库"></p><ul><li>针对分析类查询，通常只需要读取表的一小部分列。在列式数据库中你可以</li><li>只读取你需要的数据。例如，如果只需要读取100列中的5列，这将帮助你最少减少20倍的I/O消耗。</li><li>由于数据总是打包成批量读取的，所以压缩是非常容易的。同时数据按列分别存储这也更容易压缩。这进一步降低了I/O的体积。<br>由于I/O的降低，这将帮助更多的数据被系统缓存。</li></ul><hr><p>以上大部分来自<a href="%22https://clickhouse.tech/docs/zh/%22">ClickHouse</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>DataBase</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ClickHouse</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux</title>
     <link href="/2021/05/26/Linux/"/>
     <url>/2021/05/26/Linux/</url>
     
     <content type="html"><![CDATA[<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="数据流重定向"><a href="#数据流重定向" class="headerlink" title="数据流重定向"></a>数据流重定向</h3><pre><code>重定向指的是使用文件代替标准输入输出和错误输出</code></pre><table><thead><tr><th>1</th><th>代码</th><th>运算符</th></tr></thead><tbody><tr><td>标准输入stdin</td><td>0</td><td>&lt;或者&lt;&lt;</td></tr><tr><td>标准输出stdout</td><td>1</td><td>&gt;或者&gt;&gt;</td></tr><tr><td>标准错误stderr</td><td>2</td><td>2&gt;或者2&gt;&gt;</td></tr></tbody></table><pre><code>如果要将标准输入以及错误输出同时重定向到一个文件需要将某个输出转换成另一个输出，例如2&gt;&amp;1 表示将标准错误输出转为标准输出find /home -name .bashrc &gt; list 2&gt;&amp;1</code></pre>]]></content>
     
+    
+    <categories>
+      
+      <category>System</category>
+      
+    </categories>
     
     
     <tags>
@@ -30,6 +61,12 @@
     <content type="html"><![CDATA[<h2 id="About-Docker-Compose"><a href="#About-Docker-Compose" class="headerlink" title="About Docker Compose"></a>About Docker Compose</h2><pre><code>Compose 是运行多容器Docker应用程序的工具</code></pre><p>通过<a href="https://www.runoob.com/w3cnote/yaml-intro.html">Yaml</a>来配置所有需要运行的服务</p><p>Compose 三步骤：</p><blockquote><ol><li>dockerfile 定义应用程序的环境</li><li>docker-compose.yml 配置应用程序的服务</li><li>docker-compose up 启动应用程序</li></ol></blockquote>]]></content>
     
     
+    <categories>
+      
+      <category>Container</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -48,6 +85,12 @@
     
     <content type="html"><![CDATA[<h2 id="Electron-question"><a href="#Electron-question" class="headerlink" title="Electron question"></a>Electron question</h2><blockquote><p>Electron need cd node_moudules use npm install </p></blockquote>]]></content>
     
+    
+    <categories>
+      
+      <category>DesktopFrameBasicJSCSSHTML</category>
+      
+    </categories>
     
     
     <tags>
