@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Socket</title>
+    <link href="/2021/06/10/Socket/"/>
+    <url>/2021/06/10/Socket/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><h3 id="Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）"><a href="#Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）" class="headerlink" title="Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）"></a>Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）</h3><pre><code>UDP：快、安全、不稳定    适用场景：即时通信TCP：慢、安全、较稳定    适用场景：HTTP、FTP、SMTP等</code></pre><h3 id="如何创建一个socket服务器"><a href="#如何创建一个socket服务器" class="headerlink" title="如何创建一个socket服务器"></a>如何创建一个socket服务器</h3><h4 id="以Python3为例："><a href="#以Python3为例：" class="headerlink" title="以Python3为例："></a>以Python3为例：</h4><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">import <span class="hljs-built_in">socket</span><br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">socket</span>.<span class="hljs-built_in">socket</span>(<span class="hljs-built_in">socket</span>.AF_INET,<span class="hljs-built_in">socket</span>.SOCK_STREAM) <span class="hljs-keyword">as</span> s:<br>    s.bind((<span class="hljs-string">&quot;0.0.0.0&quot;</span>,<span class="hljs-number">1234</span>))<br>    s.listen()<br>    c,addr = s.accept()<br>    <span class="hljs-keyword">with</span> c:<br>        print(addr, <span class="hljs-string">&quot;connected&quot;</span>)<br>        <span class="hljs-keyword">while</span> True:<br>            data = c.recv(<span class="hljs-number">1024</span>)<br></code></pre></td></tr></table></figure><h3 id="如何创建一个socket客户端"><a href="#如何创建一个socket客户端" class="headerlink" title="如何创建一个socket客户端"></a>如何创建一个socket客户端</h3><h4 id="以Python3为例：-1"><a href="#以Python3为例：-1" class="headerlink" title="以Python3为例："></a>以Python3为例：</h4><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-keyword">import</span> socket<br><br><span class="hljs-title">with</span> socket.socket(socket.<span class="hljs-type">AF_INET</span>,socket.<span class="hljs-type">SOCK_STREAM</span>) <span class="hljs-keyword">as</span> s:<br>    s.connect((<span class="hljs-string">&quot;0.0.0.0&quot;</span>,<span class="hljs-number">1234</span>))<br>    s.sendall(b<span class="hljs-string">&quot;hello my socket&quot;</span>)<br>    <span class="hljs-class"><span class="hljs-keyword">data</span> = s.recv(1024)</span><br>    print(<span class="hljs-string">&quot;recived&quot;</span>,repr(<span class="hljs-class"><span class="hljs-keyword">data</span>))</span><br></code></pre></td></tr></table></figure><h2 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Network</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ClickHouse</title>
     <link href="/2021/05/27/ClickHouse/"/>
     <url>/2021/05/27/ClickHouse/</url>
@@ -33,7 +52,7 @@
     <link href="/2021/05/26/Linux/"/>
     <url>/2021/05/26/Linux/</url>
     
-    <content type="html"><![CDATA[<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="数据流重定向"><a href="#数据流重定向" class="headerlink" title="数据流重定向"></a>数据流重定向</h3><pre><code>重定向指的是使用文件代替标准输入输出和错误输出</code></pre><table><thead><tr><th>1</th><th>代码</th><th>运算符</th></tr></thead><tbody><tr><td>标准输入stdin</td><td>0</td><td>&lt;或者&lt;&lt;</td></tr><tr><td>标准输出stdout</td><td>1</td><td>&gt;或者&gt;&gt;</td></tr><tr><td>标准错误stderr</td><td>2</td><td>2&gt;或者2&gt;&gt;</td></tr></tbody></table><pre><code>如果要将标准输入以及错误输出同时重定向到一个文件需要将某个输出转换成另一个输出，例如2&gt;&amp;1 表示将标准错误输出转为标准输出find /home -name .bashrc &gt; list 2&gt;&amp;1</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="数据流重定向"><a href="#数据流重定向" class="headerlink" title="数据流重定向"></a>数据流重定向</h3><pre><code>重定向指的是使用文件代替标准输入输出和错误输出</code></pre><table><thead><tr><th>1</th><th>代码</th><th>运算符</th></tr></thead><tbody><tr><td>标准输入stdin</td><td>0</td><td>&lt;或者&lt;&lt;</td></tr><tr><td>标准输出stdout</td><td>1</td><td>&gt;或者&gt;&gt;</td></tr><tr><td>标准错误stderr</td><td>2</td><td>2&gt;或者2&gt;&gt;</td></tr></tbody></table><pre><code>如果要将标准输入以及错误输出同时重定向到一个文件需要将某个输出转换成另一个输出，例如2&gt;&amp;1 表示将标准错误输出转为标准输出find /home -name .bashrc &gt; list 2&gt;&amp;1</code></pre><p>随笔</p>]]></content>
     
     
     <categories>
