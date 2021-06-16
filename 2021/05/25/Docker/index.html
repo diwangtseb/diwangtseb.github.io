@@ -237,14 +237,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：13 天前
+                  本文最后更新于：20 天前
                 
               </p>
             
             <div class="markdown-body">
               <h2 id="About-Docker-Compose"><a href="#About-Docker-Compose" class="headerlink" title="About Docker Compose"></a>About Docker Compose</h2><pre><code>Compose 是运行多容器Docker应用程序的工具
-</code></pre>
-<p>通过<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/yaml-intro.html">Yaml</a>来配置所有需要运行的服务</p>
+</code></pre><p>通过<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/yaml-intro.html">Yaml</a>来配置所有需要运行的服务</p>
 <p>Compose 三步骤：</p>
 <blockquote>
 <ol>
@@ -254,7 +253,6 @@
 </ol>
 </blockquote>
 <h2 id="One-Key-Docker-Operate"><a href="#One-Key-Docker-Operate" class="headerlink" title="One Key Docker Operate"></a>One Key Docker Operate</h2><h3 id="1-对于容器"><a href="#1-对于容器" class="headerlink" title="1. 对于容器"></a>1. 对于容器</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">docker start/stop/rm <span class="hljs-constructor">$(<span class="hljs-params">docker</span> <span class="hljs-params">ps</span> -<span class="hljs-params">a</span> | <span class="hljs-params">awk</span> &#x27;&#123; <span class="hljs-params">print</span> $1&#125;&#x27; | <span class="hljs-params">tail</span> -<span class="hljs-params">n</span> +2)</span> <br></code></pre></td></tr></table></figure>
-
 <h3 id="2-对于镜像"><a href="#2-对于镜像" class="headerlink" title="2. 对于镜像"></a>2. 对于镜像</h3><figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">docker rmi <span class="hljs-constructor">$(<span class="hljs-params">docker</span> <span class="hljs-params">images</span> | <span class="hljs-params">awk</span> &#x27;&#123; <span class="hljs-params">print</span> $3&#125;&#x27; | <span class="hljs-params">tail</span> -<span class="hljs-params">n</span> + 2 )</span><br></code></pre></td></tr></table></figure>
 
             </div>
@@ -519,6 +517,45 @@
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

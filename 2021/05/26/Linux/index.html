@@ -237,13 +237,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 天前
+                  本文最后更新于：15 天前
                 
               </p>
             
             <div class="markdown-body">
               <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="数据流重定向"><a href="#数据流重定向" class="headerlink" title="数据流重定向"></a>数据流重定向</h3><pre><code>重定向指的是使用文件代替标准输入输出和错误输出
-</code></pre>
+</code></pre><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -252,25 +252,14 @@
 <th>运算符</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>标准输入stdin</td>
-<td>0</td>
-<td>&lt;或者&lt;&lt;</td>
-</tr>
+<tbody>
 <tr>
-<td>标准输出stdout</td>
-<td>1</td>
-<td>&gt;或者&gt;&gt;</td>
+<td></td>
 </tr>
-<tr>
-<td>标准错误stderr</td>
-<td>2</td>
-<td>2&gt;或者2&gt;&gt;</td>
-</tr>
-</tbody></table>
-<pre><code>如果要将标准输入以及错误输出同时重定向到一个文件需要将某个输出转换成另一个输出，例如2&gt;&amp;1 表示将标准错误输出转为标准输出
-find /home -name .bashrc &gt; list 2&gt;&amp;1
-</code></pre>
+</tbody>
+</table>
+</div>
+<p>标准输入stdin|0|&lt;或者&lt;&lt;<br>标准输出stdout|1|&gt;或者&gt;&gt;<br>标准错误stderr|2|2&gt;或者2&gt;&gt;<br>    如果要将标准输入以及错误输出同时重定向到一个文件需要将某个输出转换成另一个输出，例如2&gt;&amp;1 表示将标准错误输出转为标准输出<br>    find /home -name .bashrc &gt; list 2&gt;&amp;1</p>
 <p>随笔</p>
 
             </div>
@@ -535,6 +524,45 @@ find /home -name .bashrc &gt; list 2&gt;&amp;1
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 

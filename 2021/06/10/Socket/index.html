@@ -237,17 +237,15 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：7 分钟前
+                  本文最后更新于：7 天前
                 
               </p>
             
             <div class="markdown-body">
               <h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><h3 id="Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）"><a href="#Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）" class="headerlink" title="Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）"></a>Socket支持两种协议一种TCP（传输控制协议）一种UDP（用户数据报协议）</h3><pre><code>UDP：快、安全、不稳定    适用场景：即时通信
 TCP：慢、安全、较稳定    适用场景：HTTP、FTP、SMTP等
-</code></pre>
-<h3 id="如何创建一个socket服务器"><a href="#如何创建一个socket服务器" class="headerlink" title="如何创建一个socket服务器"></a>如何创建一个socket服务器</h3><h4 id="以Python3为例："><a href="#以Python3为例：" class="headerlink" title="以Python3为例："></a>以Python3为例：</h4><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">import <span class="hljs-built_in">socket</span><br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">socket</span>.<span class="hljs-built_in">socket</span>(<span class="hljs-built_in">socket</span>.AF_INET,<span class="hljs-built_in">socket</span>.SOCK_STREAM) <span class="hljs-keyword">as</span> s:<br>    s.bind((<span class="hljs-string">&quot;0.0.0.0&quot;</span>,<span class="hljs-number">1234</span>))<br>    s.listen()<br>    c,addr = s.accept()<br>    <span class="hljs-keyword">with</span> c:<br>        print(addr, <span class="hljs-string">&quot;connected&quot;</span>)<br>        <span class="hljs-keyword">while</span> True:<br>            data = c.recv(<span class="hljs-number">1024</span>)<br></code></pre></td></tr></table></figure>
+</code></pre><h3 id="如何创建一个socket服务器"><a href="#如何创建一个socket服务器" class="headerlink" title="如何创建一个socket服务器"></a>如何创建一个socket服务器</h3><h4 id="以Python3为例："><a href="#以Python3为例：" class="headerlink" title="以Python3为例："></a>以Python3为例：</h4><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">import <span class="hljs-built_in">socket</span><br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">socket</span>.<span class="hljs-built_in">socket</span>(<span class="hljs-built_in">socket</span>.AF_INET,<span class="hljs-built_in">socket</span>.SOCK_STREAM) <span class="hljs-keyword">as</span> s:<br>    s.bind((<span class="hljs-string">&quot;0.0.0.0&quot;</span>,<span class="hljs-number">1234</span>))<br>    s.listen()<br>    c,addr = s.accept()<br>    <span class="hljs-keyword">with</span> c:<br>        print(addr, <span class="hljs-string">&quot;connected&quot;</span>)<br>        <span class="hljs-keyword">while</span> True:<br>            data = c.recv(<span class="hljs-number">1024</span>)<br></code></pre></td></tr></table></figure>
 <h3 id="如何创建一个socket客户端"><a href="#如何创建一个socket客户端" class="headerlink" title="如何创建一个socket客户端"></a>如何创建一个socket客户端</h3><h4 id="以Python3为例：-1"><a href="#以Python3为例：-1" class="headerlink" title="以Python3为例："></a>以Python3为例：</h4><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-keyword">import</span> socket<br><br><span class="hljs-title">with</span> socket.socket(socket.<span class="hljs-type">AF_INET</span>,socket.<span class="hljs-type">SOCK_STREAM</span>) <span class="hljs-keyword">as</span> s:<br>    s.connect((<span class="hljs-string">&quot;0.0.0.0&quot;</span>,<span class="hljs-number">1234</span>))<br>    s.sendall(b<span class="hljs-string">&quot;hello my socket&quot;</span>)<br>    <span class="hljs-class"><span class="hljs-keyword">data</span> = s.recv(1024)</span><br>    print(<span class="hljs-string">&quot;recived&quot;</span>,repr(<span class="hljs-class"><span class="hljs-keyword">data</span>))</span><br></code></pre></td></tr></table></figure>
-
 <h2 id="未完待续…"><a href="#未完待续…" class="headerlink" title="未完待续…"></a>未完待续…</h2>
             </div>
             <hr>
@@ -274,6 +272,12 @@ TCP：慢、安全、较稳定    适用场景：HTTP、FTP、SMTP等
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/06/16/RSA/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">RSA</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -498,6 +502,45 @@ TCP：慢、安全、较稳定    适用场景：HTTP、FTP、SMTP等
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
