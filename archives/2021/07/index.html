@@ -18,25 +18,9 @@
   <meta name="author" content="MrWd">
   <meta name="keywords" content="">
   
-  <title>ClickHouse - MrWd&#39;s生活学习日志</title>
+  <title>归档 - MrWd&#39;s生活学习日志</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
 
 
 
@@ -64,7 +48,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,54 +147,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="ClickHouse">
+            <span class="h2" id="subtitle" title="归档">
               
             </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-05-27 00:35" pubdate>
-        2021年5月27日 凌晨
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      223 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      2
-       分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
 
             
           </div>
@@ -223,145 +162,46 @@
 
   <main>
     
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 8 篇文章</p>
+  <hr>
+  
+  
+    
       
+      <p class="h5">2021</p>
+    
+    <a href="/2021/07/06/VIM/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">VIM</span>
+      <time style="float: right;">07-06</time>
+    </a>
+  
+    
+    <a href="/2021/07/06/ZSH/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">ZSH</span>
+      <time style="float: right;">07-06</time>
+    </a>
+  
+</div>
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">ClickHouse</h1>
-            
-              <p class="note note-info">
-                
-                  本文最后更新于：1 个月前
-                
-              </p>
-            
-            <div class="markdown-body">
-              <h2 id="什么是ClickHouse？"><a href="#什么是ClickHouse？" class="headerlink" title="什么是ClickHouse？"></a>什么是ClickHouse？</h2><pre><code>ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)，列式数据库。
-</code></pre><h2 id="为什么要用ClickHouse"><a href="#为什么要用ClickHouse" class="headerlink" title="为什么要用ClickHouse"></a>为什么要用ClickHouse</h2><pre><code>列式数据库更适合于OLAP场景(对于大多数查询而言，处理速度至少提高了100倍)
-</code></pre><p>行式：<br><img src="https://clickhouse.tech/docs/zh/images/row-oriented.gif" srcset="/img/loading.gif" lazyload alt="行数据库"><br>列式：<br><img src="https://clickhouse.tech/docs/zh/images/column-oriented.gif" srcset="/img/loading.gif" lazyload alt="列数据库"></p>
-<ul>
-<li>针对分析类查询，通常只需要读取表的一小部分列。在列式数据库中你可以</li>
-<li>只读取你需要的数据。例如，如果只需要读取100列中的5列，这将帮助你最少减少20倍的I/O消耗。</li>
-<li>由于数据总是打包成批量读取的，所以压缩是非常容易的。同时数据按列分别存储这也更容易压缩。这进一步降低了I/O的体积。<br>由于I/O的降低，这将帮助更多的数据被系统缓存。</li>
-</ul>
-<hr>
-<p>以上大部分来自<a href="&quot;https://clickhouse.tech/docs/zh/&quot;">ClickHouse</a></p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/DataBase/">DataBase</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/ClickHouse/">ClickHouse</a>
-                    
-                  </div>
-                
+
+
+
               </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/06/10/Socket/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Socket</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/05/26/Linux/">
-                        <span class="hidden-mobile">Linux</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div id="gitalk-container"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#gitalk-container', function() {
-      Fluid.utils.createCssLink('/css/gitalk.css')
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js', function () {
-        var gitalk = new Gitalk({
-          clientID: 'd41b4fc0ef383061465d',
-          clientSecret: 'fa67e484a14522896fa346f634ab8c86244827c9',
-          repo: 'diwangtseb.github.io',
-          owner: 'diwangtseb',
-          admin: ["diwangtseb"],
-          id: 'e9bfb1835e24046403a2e8e631c7bfba',
-          language: 'zh-CN',
-          labels: ["Gitalk"],
-          perPage: 10,
-          pagerDirection: 'last',
-          createIssueManually: true,
-          distractionFreeMode: false,
-          proxy: '&lt;your own proxy&gt;/https://github.com/login/oauth/access_token'
-        });
-        gitalk.render('gitalk-container');
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-              </article>
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
     
 
     
@@ -465,15 +305,9 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
@@ -516,55 +350,9 @@
 
 
 
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
-
-  
 
 
 
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" ></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({"theme":"default"});
-    }
-  </script>
 
 
 
