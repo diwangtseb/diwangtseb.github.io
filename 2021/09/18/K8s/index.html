@@ -242,7 +242,11 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="k8s解决master挂掉的方案"><a href="#k8s解决master挂掉的方案" class="headerlink" title="k8s解决master挂掉的方案"></a>k8s解决master挂掉的方案</h1><p>```<br>   kubernetes高可用集群，就是解决一个master跪了的问题。<br>   kubernetes master节点中所包含的组件有etcd、api-server、controller-manager、scheduler。etcd作为数据中心，单独拿出来做集群。<br>   controller-manager和scheduler通过选举来保障高可用，负载均衡可以通过Nginx加keepalived来实现，同时可以用etcd+confd来同步配置Nginx</p>
+              <h1 id="k8s解决master挂掉的方案"><a href="#k8s解决master挂掉的方案" class="headerlink" title="k8s解决master挂掉的方案"></a>k8s解决master挂掉的方案</h1><ol>
+<li>kubernetes高可用集群，就是解决一个master跪了的问题。</li>
+<li>kubernetes master节点中所包含的组件有etcd、api-server、controller-manager、scheduler。etcd作为数据中心，单独拿出来做集群。</li>
+<li>controller-manager和scheduler通过选举来保障高可用，负载均衡可以通过Nginx加keepalived来实现，同时可以用etcd+confd来同步配置Nginx</li>
+</ol>
 
             </div>
             <hr>
