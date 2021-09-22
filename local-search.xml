@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Terminal</title>
+    <link href="/2021/09/22/Terminal/"/>
+    <url>/2021/09/22/Terminal/</url>
+    
+    <content type="html"><![CDATA[<ul><li><p>set,env,export,source,exec傻傻分不清楚？</p><ul><li>set设置了当前shell进程的本地变量，本地变量只在当前shell的进程内有效，不会被子进程继承和传递。</li><li>env仅为将要执行的子进程设置环境变量。export将一个shell本地变量提升为当前shell进程的环境变量，从而被子进程自动继承，但是export的变量无法改变父进程的环境变量。</li><li>source运行脚本的时候，不会启用一个新的shell进程，而是在当前shell进程环境中运行脚本。</li><li>exec运行脚本或命令的时候，不会启用一个新的shell进程，并且exec后续的脚本内容不会得到执行，即当前shell进程结束了。</li></ul></li><li><p>command</p><ul><li>sed : 替换文件字符串<ul><li>例如: sed -i ‘s/path/path1/g’  ~/.zshrc</li><li>多个文件替换👇</li><li>sed -i “s/oldstring/newstring/g” <code>grep oldstring -rl yourdir</code></li></ul></li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Shell</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>K8s</title>
     <link href="/2021/09/18/K8s/"/>
     <url>/2021/09/18/K8s/</url>
